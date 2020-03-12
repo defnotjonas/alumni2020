@@ -21,12 +21,354 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			#ects-grades {
+				width: 100%;
+				border-collapse: collapse;
+				table-layout: fixed;
+			}
+
+			#ects-grades td {
+				text-align: center;
+			}
+
+			#timetable {
+				font-size: 27px;
+			}
+
+			.border-right {
+				border-right: solid 4px #f0f0f0
+			}
+
+			.no-linebreak {
+				white-space: nowrap;
+			}
+
+			.day {
+				position: fixed;
+				top: 0;
+				left: 0;
+
+				font-size: 20px;
+			}
+
+			.day table td {
+				border-bottom: none;
+			}
+
+			.text-right {
+				text-align: right !important;
+			}
+
+			.huge {
+				font-weight: bolder;
+				font-size: 6rem;
+			}
+
+			.grid {
+				display: grid !important;
+
+				position: absolute;
+				height: 100%;
+				width: 100%;
+			}
+
+			.thirds {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>Wer bin ich?</h2>
+					Bachelor-Student Informatik<br>
+					in Würzburg<br>
+					zwischen 5. & 6. Semester
+					<aside class="notes"><i>1min</i></aside>
+				</section>
+				<section>
+					<h2>Über was sprechen wir heute?</h2>
+					<ol style="list-style: none">
+						<li>(~5min) Wie funktioniert Studieren eigentlich?</li>
+						<li>(20min) Das Informatik Studium speziell</li>
+						<ul>
+							<li>Wie sieht der Stoff aus?</li>
+							<li>Wie genau sieht der Alltag im Studium aus?</li>
+						</ul>
+						<li>(10min) Fragen von euch</li>
+					</ol>
+					<aside class="notes"><i>1min</i></aside>
+				</section>
+				<section data-background-color="#002445">
+					<section>
+						<h1>Wie funktioniert Studieren eigentlich?</h1>
+					</section>
+					<section>
+						<br />
+						<br />
+						<br />
+						Bachelor
+						<hr>
+						Master
+						<aside class="notes">
+							Ungefähr aufgeteilt wie hier zu sehen<br>
+							Bachelor ist allgemein gehalten / man sieht mal alles<br>
+							Master ist spezieller / beschäftigt sich mit einem oder zwei Teilgebieten
+
+							<i>2min</i>
+						</aside>
+					</section>
+					<section>
+						<table id="ects-grades">
+							<tr>
+								<td class="border-right">ECTS</td>
+								<td>Noten</td>
+							</tr>
+						</table>
+						<aside class="notes">
+							ECTS sind quasi Studienvortschritt<br>
+							Noten gibt es auf jede Prüfung / berechnen die gesamt Note
+
+							<i>2min</i>
+						</aside>
+					</section>
+					<section data-background-iframe="https://www.informatik.uni-wuerzburg.de/fileadmin/10030000/Studium/Studienverlaufsplaene/SVP_BA_Informatik_WS_Fokus_TI_2018.pdf" data-background-interactive>
+						<div style="pointer-events: all; position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+							<h2>Studienverlaufspläne</h2>
+							<p>Ein Beispiel "Stundenplan" für euer Studium</p>
+							<p><a target="_blank" rel="noopener noreferrer" href="https://google.de/">Ein Beispiel</a></p>
+						</div>
+						<aside class="notes">
+							Google: <br>
+
+							<i>3min</i>
+						</aside>
+					</section>
+					<section>
+						<iframe
+								width="600"
+								height="450"
+								frameborder="0" style="border:0"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB-nvDQHYBir-mNFhhrLwfsM6GXxqiEPy0&q=Space+Needle,Seattle+WA"
+								allowfullscreen>
+						</iframe>
+						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+							<h2>Wo studiert man?</h2>
+						</div>
+					</section>
+				</section>
+				<section data-background-color="#0F2E00">
+					<section>
+						<h1>Das Informatik Studium speziell</h1>
+					</section>
+					<section class="grid thirds">
+						<div class="fragment" data-fragment-index="1" style="grid-column: 1; display: flex; flex-direction: row; align-items: center; background-image: url('./assets/maths.jpg'); background-size: cover">
+							<div style="width: 100%; display: flex; flex-direction: column; align-items: center">
+								<h3>Mathematik</h3>
+								<span class="fragment" data-fragment-index="4">
+									<br>
+									<br>
+									Grundgerüste<br>
+									Beweismethodik<br>
+									mathematische Modelle
+								</span>
+							</div>
+						</div>
+						<div class="fragment" data-fragment-index="2" style="grid-column: 2; display: flex; flex-direction: row; align-items: center; background-image: url('./assets/theoreticalCS.png'); background-size: cover">
+							<div style="width: 100%; display: flex; flex-direction: column; align-items: center">
+								<h3 style="color: black !important">Theoretische<br />Informatik</h3>
+								<span class="fragment" data-fragment-index="5" style="color: black !important">
+									<br>
+									Berechenbarkeit<br>
+									Laufzeiten<br>
+									Berechungsmodelle
+								</span>
+							</div>
+						</div>
+						<div class="fragment" data-fragment-index="3" style="grid-column: 3; display: flex; flex-direction: row; align-items: center; background-image: url('./assets/programming.jpg'); background-size: cover">
+							<div style="width: 100%; display: flex; flex-direction: column; align-items: center">
+								<h3>Praktische<br />Informatik</h3>
+								<span class="fragment" data-fragment-index="6">
+									<br>
+									Java & Python<br>
+									Projektplanung<br>
+									Hardwaredesign
+								</span>
+
+							</div>
+						</div>
+						<aside class="notes">
+							Mathematik: nicht Schul-mathe, sondern beweise, Basis für alles andere<br>
+
+							Man sieht: umspannt alles<br />
+							Halflife of Knowledge
+
+							<i>5min</i>
+						</aside>
+					</section>
+					<section data-background="./assets/homework.jpeg">
+						<h2>Hausaufgaben</h2>
+						<aside class="notes">
+							Zu fast jeder Vorlesung eine Hausaufgabe<br>
+							wöchentlich, oder 2 wöchentlich<br>
+							Es bietet sich stark an, im Team zu arbeiten (meistens 3-4 erlaubt)<br>
+							Halflife of Knowledge ist im Studium an der Uni sehr lange
+
+							<i>3min</i>
+						</aside>
+					</section>
+					<section>
+						<h2>Vorbereitung</h2>
+						<table id="ects-grades">
+							<tr>
+								<td class="border-right">Dauerhaftes Lernen</td>
+								<td>Lernen vor der Klausur</td>
+							</tr>
+						</table>
+						<aside class="notes">
+							<i>1min</i>
+						</aside>
+					</section>
+					<section>
+						<h2>Vorbereitung</h2>
+						<ul>
+							<li>Bücher</li>
+							<li>Vorlesungsfolien</li>
+							<li>Mitschriften aus der Vorlesung</li>
+						</ul>
+						<aside class="notes">
+							Wenn ein Prof seine Vorlesung wirklich nur vorliest, ist es keine Schande einfach ein gutes Buch zu lesen
+
+							<i>2min</i>
+						</aside>
+					</section>
+				</section>
+				<section data-background-color="#330900">
+					<section>
+						<h1>Der Tagesablauf eines Informatik Studenten</h1>
+					</section>
+					<section>
+						<h2>Beispielsemester (30 ECTS)</h2>
+						<table id="timetable">
+							<tr>
+								<th>Zeiten</th>
+								<th>Montag</th>
+								<th>Dienstag</th>
+								<th>Mittwoch</th>
+								<th>Donnerstag</th>
+								<th>Freitag</th>
+							</tr>
+							<tr>
+								<td>08:00</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>AlgoDat</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>10:00</td>
+								<td>Mathe 1</td>
+								<td>AlgoDat</td>
+								<td>Logik<br><small>Übung</small></td>
+								<td>Logik</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>12:00</td>
+								<td>Mathe 1<br><small>Übung</small></td>
+								<td>AlgoDat<br><small>Übung</small></td>
+								<td>Mathe 1</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>14:00</td>
+								<td></td>
+								<td>Programmierung<br><small>Übung</small></td>
+								<td></td>
+								<td></td>
+								<td>Programmierung</td>
+							</tr>
+						</table>
+
+						Summe: 15h
+						<span class="fragment"> + 8h</span>
+						<span class="fragment"> + 5h</span>
+						<span class="fragment"> = 28h</span>
+					</section>
+				</section>
+				<section>
+					<div class="day">
+						<table>
+							<tr class="fragment highlight-current-blue">
+								<td class="border-right text-right">9:00 - 10:00</td>
+								<td>Losfahren</td>
+							</tr>
+							<tr>
+								<td class="border-right text-right">10:15 - 11:45</td>
+								<td>Mathe 1</td>
+							</tr>
+							<tr>
+								<td class="border-right text-right"></td>
+								<td>Pause</td>
+							</tr>
+							<tr>
+								<td class="border-right text-right">14:15 - 15:45</td>
+								<td>Theoretische Informatik</td>
+							</tr>
+							<tr>
+								<td class="border-right text-right">16:15 - 17:45</td>
+								<td>Softwaretechnik<small>Übung</small></td>
+							</tr>
+							<tr>
+								<td class="border-right text-right">18:30 - 19:30</td>
+								<td>Zuhause ankommen</td>
+							</tr>
+						</table>
+					</div>
+					<section>
+
+					</section>
+					<section data-background="./assets/info.turing_1.jpg">
+						<b style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); padding: 0 2rem;" class="huge">Mathe 1</b>
+					</section>
+					<section data-background="./assets/Mensa.png">
+						<b style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); padding: 0 2rem;" class="huge">Pause</b>
+					</section>
+					<section data-background="./assets/Z6.00.002_1.jpg">
+						<b style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); padding: 0 2rem;" class="huge">Theoretische Informatik</b>
+					</section>
+					<section data-background="./assets/info.sem_1.jpg">
+						<b style="box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); padding: 0 2rem;" class="huge">Softwaretechnik<small>Übung</small></b>
+					</section>
+				</section>
+				<section>
+					<h2>Soft Skills</h2>
+					<ul>
+						<li class="fragment">Selbstorganisation</li>
+						<li class="fragment">Eigenständiges Arbeiten</li>
+						<li class="fragment">Stressresistenz</li>
+						<li class="fragment">Teamfähigkeit</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Informatik: Uni oder FH?</h2>
+				</section>
+				<section>
+					<h2>Zusammenfassung</h2>
+					Studieren ist besonders in der Klausurenphase anstrengend<br><br>
+					Je leichter man es sich während des Semesters macht,<br>desto schwerer die Klausurenphase, und desto schlechter die Noten<br><br>
+					Anwendung muss man sich selber beibringen<br><br>
+					Partner für Hausaufgaben sind eine gute Idee<br><br>
+				</section>
+				<section>
+					<h2>Weiterführendes</h2>
+
+				</section>
 			</div>
 		</div>
 
